@@ -4,12 +4,11 @@ import { loadUsersByPage } from "../user_case/load-users-by-page";
 const state = {
     currentPage: 0,
     users: [],
-    cuenta: 0
 }
 
 const loadNextPage = async () => {
     loadUsersByPage( state.currentPage + 1)
-    console.log()
+    
 }
 
 const loadPreviusPage = async () => {
