@@ -10,15 +10,15 @@ const extractUserData = (apiResponse) => {
     }
 }
 
-export const loadUsersByPage = async (page = 1) => {
+export const getUserById = async (id) => {
 
-    const url = `${import.meta.env.VITE_BASE_URL}/users?_page=${page}`;
+    const url = `${import.meta.env.VITE_BASE_URL}/users/${id}`;
     const res = await fetch(url);
     const data = await res.json();
 
-    const users = data.map( localhostUserToModel );
-    
-    return users;
+    const user = localhostUserToModel(data);
+    console.log(user)
+    return user;
 
 }
 
